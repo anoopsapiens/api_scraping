@@ -6,11 +6,10 @@ headers = {'Accept-Language': "en-US,en;q=0.9",
            'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36",
            'cookie': cookies}
 
-with open("keywords.txt") as f:
+with open("keyword.txt") as f:
     keywords = f.readlines()
 
 for keyword in keywords:
-    keyword=keyword.rstrip('\n').split(',')[0]    
     try:
         API_Link = "https://shop.wegmans.com/api/v2/store_products?ads_enabled=true&ads_pagination_improvements=false&allow_autocorrect=true&limit=1&offset=0&search_is_autocomplete=false&search_provider=ic&search_term=" + \
         keyword.replace(
